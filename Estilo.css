@@ -56,22 +56,62 @@ header {
 }
 
 main{
-    margin-inline: 60px;
+    margin-inline: 65px;
 }
 
 nav a:hover {
     color: var(--color-hover);
 }
 
+@media (max-width: 530px) {
+    header {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        a {
+            color: var(--color-azul-oscuro);
+            text-decoration: none;
+            h2 {
+                margin-top: 10px;
+                margin-bottom: 0px;
+                text-align: center;
+            }
+        }
+        nav {
+            margin-bottom: 10px;
+        }
+    }
+}
+
 /*=========================================================
-body*/
+body inicio*/
 
 #body_inicio {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-block: 40px;
+}
+
+@media (max-width: 700px) {
+    #body_inicio {
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;  
+        margin-inline: 30px; 
+    }
+    #info_coctel {
+        width: 300px;
+    }
+}
+
+@media (min-width: 701px) {
+    #info_coctel{
+        width: 40vw;
+    }
 }
 
 /*=========================================================
@@ -93,7 +133,7 @@ section botones*/
     padding-block: 13px;
     padding-inline: 25px;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 19px;
 }
 
 #btn_random:hover {
@@ -122,9 +162,29 @@ section botones*/
 section info coctél*/
 
 #info_coctel {
-    width: 40vw;
     min-height: 500px;
     border-radius: 20px;
     border: solid 1px var(--color-claro);
     background-color: white;
+}
+
+/*=========================================================
+main favs*/
+#main_favs {
+    margin-block: 40px;
+    color: var(--color-azul);
+    h2 {
+        font-size: 33px;
+        letter-spacing: 2px;
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 400px) {
+    #main_favs{
+        margin-inline: 30px; 
+        h2 {
+            text-align: center;
+        }
+    }
 }
