@@ -1,0 +1,130 @@
+/*=========================================================
+General - header*/
+
+:root {
+    --color-azul: #15264f;
+    --color-hover: #2c4683;
+    --color-azul-oscuro: #111f3f;
+    --color-claro: #7288bb45;
+}
+
+body {
+    font-family: "montserrat", sans-serif;
+    margin: 0px;
+    background-color: whitesmoke;
+}
+
+header {
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-inline: 65px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 79.5px;
+    z-index: 1000;
+    a {
+        color: var(--color-azul-oscuro);
+        text-decoration: none;
+        h2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-inline: 20px;
+            margin-block: 22.5px;
+            font-size: 33px;
+            letter-spacing: 2px;
+        }
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        align-items: center;
+        font-size: 20px;
+        letter-spacing: 1px;
+        font-weight: 350;
+        margin-inline: 20px;
+    }
+}
+
+main{
+    margin-inline: 60px;
+}
+
+nav a:hover {
+    color: var(--color-hover);
+}
+
+/*=========================================================
+body*/
+
+#body_inicio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*=========================================================
+section botones*/
+
+#botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    width: 45vw;
+}
+
+#btn_random {
+    background-color: var(--color-azul);
+    color: white;
+    border: none;
+    padding-block: 13px;
+    padding-inline: 25px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#btn_random:hover {
+    background-color: var(--color-hover);
+}
+
+#btn_favs {
+    background-color: var(--color-azul);
+    color: white;
+    border: none;
+    padding-block: 10px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+    
+#btn_favs:hover {
+    background-color: var(--color-hover);
+}
+
+#cargando {
+    width: 80px;
+}
+
+/*=========================================================
+section info coctél*/
+
+#info_coctel {
+    width: 40vw;
+    min-height: 500px;
+    border-radius: 20px;
+    border: solid 1px var(--color-claro);
+    background-color: white;
+}
