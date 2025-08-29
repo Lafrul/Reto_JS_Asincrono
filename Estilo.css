@@ -162,10 +162,33 @@ section botones*/
 section info coctél*/
 
 #info_coctel {
-    min-height: 500px;
-    border-radius: 20px;
-    border: solid 1px var(--color-claro);
-    background-color: white;
+  min-height: 500px;
+  border-radius: 20px;
+  border: solid 1px var(--color-claro);
+  background-color: white;
+  color: var(--color-azul-oscuro);
+
+  #drink_img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 10px 0;
+    display: none; 
+  }
+  #drink_ingredients {
+    margin: 6px 0 12px;
+    padding-left: 18px;
+    li {
+      margin: 2px 0;
+    }
+  }
+  #titulo_star {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    #star {
+      margin-left: 15px;
+    }
+  }
 }
 
 /*=========================================================
@@ -217,7 +240,7 @@ main favs*/
 }
 
 /* Tarjetas internas */
-#main_favs .card {
+.card, #info_coctel {
   background-color: #fff;
   border: 1px solid var(--color-claro);
   border-radius: 16px;

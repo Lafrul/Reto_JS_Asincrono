@@ -30,6 +30,16 @@ function hideLoader(root = document) {
   if (l) l.style.display = 'none';
 }
 
+// Mostrar y ocultar estrellita
+function showStar(root = document) {
+  const l = $('#star', root);
+  if (l) l.style.display = 'inline-block';
+}
+function hideStar(root = document) {
+  const l = $('#star', root);
+  if (l) l.style.display = 'none';
+}
+
 /* LocalStorage*/
 function readFavs() {
   try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; }
@@ -90,6 +100,14 @@ function fillDrinkOnIndex(drink) {
   el('drink_instructions').textContent = drink.strInstructions || '—';
 
   currentDrink = { id: drink.idDrink, name: drink.strDrink };
+
+  const favs = readFavs();
+  if (favs.some(f => f.id === drink.idDrink)) {
+    showStar();
+  }
+  else {
+    hideStar();
+  }
 }
 
 async function loadRandomDrink() {
@@ -116,6 +134,10 @@ function handleAddToFavs() {
   }
   const ok = addFav(currentDrink.id, currentDrink.name);
   alert(ok ? 'Guardado en Favoritos' : 'Ya estaba en Favoritos');
+  const favs = readFavs();
+  if (favs.some(f => f.id === currentDrink.id)) {
+    showStar();
+  }
 }
 
 /* Inicialización para index */
@@ -124,6 +146,8 @@ function initIndexPage() {
   if (!main) return;
 
   hideLoader();
+  hideStar();
+  loadRandomDrink();
   const btnRandom = el('btn_random');
   const btnFavs   = el('btn_favs');
   if (btnRandom) btnRandom.addEventListener('click', loadRandomDrink);
@@ -150,7 +174,7 @@ function buildFavsLayout() {
 
   const detailCard = make('article', { class: 'card' }, [
     make('h3', {}, 'Detalle'),
-    make('div', { id: 'detalle_favorito' }, [
+    make('div',  {id: 'detalle_favorito' }, [
       make('h4', { id: 'fav_name' }, 'Selecciona un favorito'),
       make('p',  { id: 'fav_id' }),
       make('p',  { id: 'fav_meta', class: 'muted' }), // categoría · tipo · vaso
