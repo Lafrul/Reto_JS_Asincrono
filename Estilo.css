@@ -188,3 +188,114 @@ main favs*/
         }
     }
 }
+
+/* cocteles favoritos */
+#main_favs .favs-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 16px;
+}
+#main_favs .favs-toolbar #cargando {
+  height: 28px;
+  width: auto;
+  display: none; 
+}
+
+
+#main_favs .favs-panels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 900px) {
+  #main_favs .favs-panels {
+    grid-template-columns: 1fr 1.2fr;
+    align-items: start;
+  }
+}
+
+/* Tarjetas internas */
+#main_favs .card {
+  background-color: #fff;
+  border: 1px solid var(--color-claro);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+/* Títulos y textos */
+#main_favs h3 {
+  margin: 0 0 10px;
+  color: var(--color-azul-oscuro);
+  letter-spacing: 0.5px;
+}
+#main_favs h4 {
+  margin: 6px 0 6px;
+  color: var(--color-azul);
+  font-weight: 600;
+}
+
+/* Lista de favoritos */
+#main_favs .fav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#main_favs .fav-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-claro);
+}
+#main_favs .fav-item {
+  background: transparent;
+  border: none;
+  color: var(--color-azul);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  padding: 4px 0;
+}
+#main_favs .fav-item:hover {
+  color: var(--color-hover);
+  text-decoration: underline;
+}
+#main_favs .fav-del {
+  background: #f3f5fb;
+  border: 1px solid var(--color-claro);
+  color: var(--color-azul-oscuro);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+#main_favs .fav-del:hover {
+  background: #eaf0ff;
+}
+
+/* Detalle del favorito */
+#main_favs #fav_meta {
+  margin-top: -2px;
+  color: var(--color-azul-oscuro);
+  opacity: .8;
+  font-size: 0.95rem;
+}
+#main_favs #fav_img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 10px 0;
+  display: none; 
+}
+#main_favs #fav_ingredients {
+  margin: 6px 0 12px;
+  padding-left: 18px;
+}
+#main_favs #fav_ingredients li {
+  margin: 2px 0;
+}
+
+
+#main_favs .muted { color: #6b7280; }
+#main_favs .error { color: #b00020; }
